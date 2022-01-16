@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{  PageTitle  }}</title>
+    <meta name="description" content='{{  description  }}'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources/guyyatsu.me.css') }}">
+  </head>
+  <body>
+    <div class='spanner'>
+      {% include 'SiteNavigation.html' %}
+    </div>
+    <div id='BodyArticle'class='article'>
+      <h1 class="title">{{ WorkingTitle }}</h1>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
