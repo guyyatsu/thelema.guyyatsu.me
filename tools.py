@@ -1,3 +1,21 @@
+from PIL import Image
+
+
+def Color_Getter(initial_input):
+  def rgb2hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+  Image_Module=Image
+  Color_Pixel=Image_Module.open(initial_input).resize((1, 1)).convert("RGB").getdata()
+  for r, g, b, in Color_Pixel:
+    return rgb2hex(r, g, b)
+
+
+def Color_Inverter(color):
+  hex_white="FFFFFF"
+  hex_one=color.replace('#', '')
+  return hex(int(hex_white, 16) - int(hex_one, 16))
+
+
 def Title_Spacer(title):
   try:
     New_Title=title.replace('Of', ' Of ')
@@ -6,11 +24,7 @@ def Title_Spacer(title):
   return New_Title
 
 
-def Build_HTML_Index_Page(
-  Header_List,#  TAROT.card_types
-  LineItem_List,#  TAROT.card_list
-  Reference_Dictionary#  TAROT.card_database
-  ):
+def Build_HTML_Index_Page(Header_List, LineItem_List, Reference_Dictionary):
   """  Helper Function that builds a nested unordered list with
        headers and line-items associated with them."""
   ElementObject=""
