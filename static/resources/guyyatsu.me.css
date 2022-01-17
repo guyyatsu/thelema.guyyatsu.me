@@ -1,6 +1,31 @@
 /* Object-Oriented StyleSheet for thelema.guyyatsu.me */
 
 
+
+
 /* STRUCTURE */
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 3px;
+}
+
+.topnav li {
+  float: left;
+}
+
+.card_image_container {
+  width: 200px;
+  height: 120px;
+}
+
+.card_image_container img {
+  width: 100%;
+  height: auto;
+}
 
 /* STYLE */
+.banner {
+  width: 75%;
+  height: auto;
+}

@@ -1,27 +1,12 @@
 <!--  Top-Nav navigation bar -->
-<div>
+<ul>
 
-  <a href="http://guyyatsu.me">
-    <img src="{{ url_for('static', filename='resources/graphics/banner.png') }}">
-  </a>
+  {% for item in nav.top %}
 
-</div>
+  <li class="{{ 'active' if item.is_active else 'inactive' }}">
+    <a href="{{ item.url }}">{{ item.label }}</a>
+  </li>
 
+  {% endfor %}
 
-<br>
-
-
-<div class="navbar">
-
-  <ul>
-
-    {% for item in nav.top %}
-
-    <li class="{{ 'active' if item.is_active else 'inactive' }}">
-      <a href="{{ item.url }}">{{ item.label }}</a>
-    </li>
-
-    {% endfor %}
-
-  </ul>
-</div>
+</ul>

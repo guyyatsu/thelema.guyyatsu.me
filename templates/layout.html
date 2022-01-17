@@ -11,13 +11,23 @@
 
   <body>
 
-    <div>
-      {% include 'SiteNavigation.html' %}
-    </div>
+    <div id="Main_Page_Body">
 
-    <div>
-      <h1>{{ WorkingTitle }}</h1>
-      {% block content %}{% endblock %}
+      <div class="banner center">
+        <a href="http://guyyatsu.me">
+          <img src="{{ url_for('static', filename='resources/graphics/banner.png') }}">
+        </a>
+      </div>
+
+      <div class="topnav center">
+        {% include 'SiteNavigation.html' %}
+      </div>
+
+      <div class="content center">
+        <h1>{{ WorkingTitle }}</h1>
+        {% block content %}{% endblock %}
+      </div>
+
     </div>
 
   </body>
