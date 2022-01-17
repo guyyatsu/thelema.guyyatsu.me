@@ -1,13 +1,11 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<div class="card_image_container">
+<div class="card_image_container center">
   <img src='{{ ImagePath }}'>
 </div>
 
-<br>
-
-<div>
+<div class="text_content">
   {{ CardEssay | safe }}
 </div>
 
